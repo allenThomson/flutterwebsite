@@ -255,14 +255,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: TextField(
                                 controller: customAttrKeys[index],
                                 decoration: InputDecoration(
-                                    labelText: 'Custom Attribute Key'),
+                                    labelText: 'Custom/System Attribute Name'),
                               ),
                             ),
                             Expanded(
                               child: TextField(
                                 controller: customAttrValues[index],
                                 decoration: InputDecoration(
-                                    labelText: 'Custom Attribute Value'),
+                                    labelText: 'Attribute Value'),
                               ),
                             ),
                             IconButton(
@@ -326,15 +326,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             Expanded(
                               child: TextField(
                                 controller: eventAttrKeys[index],
-                                decoration:
-                                    InputDecoration(labelText: 'Event Attr'),
+                                decoration: InputDecoration(
+                                    labelText: 'Event Attribute Name'),
                               ),
                             ),
                             Expanded(
                               child: TextField(
                                 controller: eventAttrValues[index],
                                 decoration: InputDecoration(
-                                    labelText: 'Event Attr Value'),
+                                    labelText: 'Event Attribute Value'),
                               ),
                             ),
                             IconButton(

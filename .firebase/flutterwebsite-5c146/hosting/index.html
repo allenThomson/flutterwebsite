@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="flutter_sample_web">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>flutter_sample_web</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "1345644039";
+  </script>
+  <script id="_webengage_script_tag" type="text/javascript">
+    var webengage;
+    ! function(w, e, b, n, g) {
+      function o(e, t) {
+        e[t[t.length - 1]] = function() {
+          r.__queue.push([t.join("."), arguments])
+        }
+      }
+      var i, s, r = w[b],
+        z = " ",
+        l = "init options track screen onReady".split(z),
+        a = "feedback survey notification".split(z),
+        c = "options render clear abort".split(z),
+        p = "Open Close Submit Complete View Click".split(z),
+        u = "identify login logout setAttribute".split(z);
+      if (!r || !r.__v) {
+        for (w[b] = r = {
+            __queue: [],
+            __v: "6.0",
+            user: {}
+          }, i = 0; i < l.length; i++) o(r, [l[i]]);
+        for (i = 0; i < a.length; i++) {
+          for (r[a[i]] = {}, s = 0; s < c.length; s++) o(r[a[i]], [a[i], c[s]]);
+          for (s = 0; s < p.length; s++) o(r[a[i]], [a[i], "on" + p[s]])
+        }
+        for (i = 0; i < u.length; i++) o(r.user, ["user", u[i]])
+      }
+    }(window, document, "webengage");
+  
+  
+    if (window.__WEBENGAGE_MOBILE_BRIDGE__) {
+  
+      (function(bridge) {
+  
+        var type = Object.prototype.toString;
+  
+        webengage.user.login = webengage.user.identify = function(id) {
+          bridge.login(id)
+        };
+        webengage.user.logout = function() {
+          bridge.logout()
+        };
+  
+        webengage.user.setAttribute = function(name, value) {
+          var attr = null;
+  
+          if (type.call(name) === '[object Object]') {
+            attr = name;
+          } else {
+            attr = {};
+            attr[name] = value;
+          }
+  
+          if (type.call(attr) === '[object Object]') {
+            bridge.setAttribute(JSON.stringify(attr));
+          }
+        };
+  
+        webengage.screen = function(name, data) {
+          if (arguments.length === 1 && type.call(name) === '[object Object]') {
+            data = name;
+            name = null;
+          }
+  
+          bridge.screen(name || null, type.call(data) === '[object Object]' ? JSON.stringify(data) : null);
+        };
+  
+        webengage.track = function(name, data) {
+          bridge.track(name, type.call(data) === '[object Object]' ? JSON.stringify(data) : null);
+        };
+  
+      })(window.__WEBENGAGE_MOBILE_BRIDGE__);
+  
+    } else {
+  
+      setTimeout(function() {
+        var f = document.createElement("script"),
+          d = document.getElementById("_webengage_script_tag");
+        f.type = "text/javascript",
+          f.async = !0,
+          f.src = ("https:" == window.location.protocol ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/webengage-min-v-6.0.js",
+          d.parentNode.insertBefore(f, d)
+      });
+  
+    }
+  
+    webengage.init("~1341056cd");
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBlw13qHhBc4gllDjeeHqquUU7YbSion5w",
+      authDomain: "flutterwebsite-5c146.firebaseapp.com",
+      projectId: "flutterwebsite-5c146",
+      storageBucket: "flutterwebsite-5c146.appspot.com",
+      messagingSenderId: "930649269981",
+      appId: "1:930649269981:web:a4ea298198aab9cc2ddd34",
+      measurementId: "G-7566P0R8ER"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
