@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-
+import 'dart:html' as html;
+import 'dart:ui' as ui; // Import dart:ui
 import 'package:flutter_web/flutter_web.dart';
 
 WebEngage webengage = new WebEngage();
 
 void main() {
+  // ignore: undefined_prefixed_name
+  ui.platformViewRegistry.registerViewFactory(
+    'sample-html-element',
+    (int viewId) {
+      var element = html.DivElement()
+        ..id = 'sampleElementId'
+        ..innerHtml = '<p style="color: red;">Hello from HTML Element!</p>';
+      return element;
+    },
+  );
+
   runApp(MyApp());
 }
 
@@ -306,6 +318,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 20),
+                  HtmlElementView(
+                      viewType:
+                          'sample-html-element'), // Add the HTML element here
                 ],
               ),
             ),
