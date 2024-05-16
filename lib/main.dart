@@ -14,7 +14,8 @@ void main() {
     (int viewId) {
       var element = html.DivElement()
         ..id = 'sampleElementId'
-        ..innerHtml = '<p style="color: red;">Hello from HTML Element!</p>';
+        ..innerHtml =
+            '<p style="color: red;">This is an HTML DOM element with an ID passed to JS - WIP For webinline supportt</p>';
       return element;
     },
   );
@@ -291,6 +292,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                     ),
                   ),
+                  Container(
+                    width: 200, // Set the desired width
+                    height: 200,
+                    margin: const EdgeInsets.only(bottom: 0),
+                    // Set the desired height
+                    child: HtmlElementView(viewType: 'sample-html-element'),
+                  ),
                   IconButton(
                     icon: Icon(Icons.add),
                     onPressed: () {
@@ -319,9 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   SizedBox(height: 20),
-                  HtmlElementView(
-                      viewType:
-                          'sample-html-element'), // Add the HTML element here
+                  // Add the HTML element here
                 ],
               ),
             ),
